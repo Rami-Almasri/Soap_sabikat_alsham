@@ -9,4 +9,12 @@ class Benefit extends Model
 {
     /** @use HasFactory<\Database\Factories\BenefitFactory> */
     use HasFactory;
+
+    protected $table = 'benefits';
+
+    protected $fillable = [
+        'name',
+        'description',
+
+    ];
 }
