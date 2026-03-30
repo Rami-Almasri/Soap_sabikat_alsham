@@ -52,7 +52,7 @@ Built with a **Decoupled Architecture** (Laravel API + React SPA), this project 
 To get a local copy up and running, follow these simple steps:
 
 ### 1. Clone the repository
-```bash
+bash
 git clone [https://github.com/Rami-Almasri/soap-store.git](https://github.com/Rami-Almasri/soap-store.git)
 2. Backend Configuration (Laravel)
 Bash
