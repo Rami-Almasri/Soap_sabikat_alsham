@@ -36,4 +36,14 @@ class Product extends Model implements HasMedia
         // ربط الـ Global Scope
         static::addGlobalScope(new WithBenefitsScope());
     }
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class);
+    }
+    // Product.php
+    public function favorites()
+    {
+
+        return $this->hasMany(Favorite::class, 'product_id');
+    }
 }

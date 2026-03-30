@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import ProductsPage from "./Products";
 import CategoriesPage from "./Categories";
 import UsersPage from "./Users";
+import AdminOrdersPage from "./AdminOrdersPage";
 
 export default function DashpoardDetail() {
   var { type } = useParams();
@@ -15,6 +16,8 @@ export default function DashpoardDetail() {
   if (type === "users") {
     return <UsersPage />;
   }
-
+  if (type === "orders") {
+    return <AdminOrdersPage />;
+  }
   return <div>{type}</div>;
 }

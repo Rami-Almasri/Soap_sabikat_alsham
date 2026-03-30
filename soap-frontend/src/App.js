@@ -13,12 +13,21 @@ import Shop from "./Shop";
 import Sidebar from "./Sidebar";
 import Dashpoard from "./Dashboard";
 import DashpoardDetail from "./DashpoardDetail";
+import Signup from "./Login_signup/signup";
+import Login from "./Login_signup/Login";
+import ProductDetails from "./Cart/ProductDetails";
+import CartPage from "./Cart/CartPage";
+import OrdersPage from "./OrdersPage";
+import OrderDetailsPage from "./OrderDetailsPage";
+import AdminOrdersPage from "./AdminOrdersPage";
+import Favorite from "./Favorite";
 
-function App() {
+function Layout() {
   return (
-    <div>
+    <>
       <Navbar />
       <FoamCursor />
+
       <Routes>
         <Route
           path="/"
@@ -32,12 +41,32 @@ function App() {
           }
         />
         <Route path="/products/:category" element={<Product />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+
+        <Route path="/cart" element={<CartPage />} />
         <Route path="/shop/all" element={<Shop />} />
         <Route path="/Dashpoard" element={<Dashpoard />} />
         <Route path="/dashboard/:type" element={<DashpoardDetail />} />
+
+        <Route path="/myorders" element={<OrdersPage />} />
+
+        <Route path="/order/:id" element={<OrderDetailsPage />} />
+        <Route path="/orders" element={<AdminOrdersPage />} />
+        <Route path="/favorites" element={<Favorite />} />
       </Routes>
+
       <Footer />
-    </div>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/*" element={<Layout />} />
+    </Routes>
   );
 }
 

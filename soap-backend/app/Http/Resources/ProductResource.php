@@ -21,7 +21,8 @@ class ProductResource extends JsonResource
             'price' => $this->price,
             'weight' => $this->weight,
             'stock' => $this->stock,
-            'image' => $this->getMedia('product')->first()->getUrl(),
+            'image' => $this->getFirstMediaUrl('product'),
+            'is_favorite' => (bool) $this->is_fav,
             'category' => CategoryResource::make($this->whenLoaded('category')),
             'benefits' => BenefitResource::make($this->whenLoaded('benefits')),
         ];

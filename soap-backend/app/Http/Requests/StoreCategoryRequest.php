@@ -28,7 +28,13 @@ class StoreCategoryRequest extends FormRequest
                 'string',
                 'max:255',
                 Rule::unique('categories', 'name')
+            ],
+            'image' => [
+                'nullable',
+                'mimes:jpeg,png,jpg,gif',
+                'max:2048'
             ]
+
         ];
     }
 }

@@ -28,6 +28,11 @@ class UpdateCategoryRequest extends FormRequest
                 'string',
                 'max:255',
                 Rule::unique('categories', 'name')->ignore($this->route('category')->id),
+            ],
+            'image' => [
+                'nullable',
+                'mimes:jpeg,png,jpg,gif',
+                'max:2048'
             ]
         ];
     }

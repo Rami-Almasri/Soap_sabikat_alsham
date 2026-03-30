@@ -48,7 +48,8 @@ class ProductController extends Controller
     {
         try {
             $product = $this->productService->show($product);
-            return ResponseHelper::SuccessResponse($product, 'Product Found', 200);
+            $result = ProductResource::make($product);
+            return ResponseHelper::SuccessResponse($result, 'Product Found', 200);
         } catch (\Exception $e) {
             return ResponseHelper::FailureResponse($e->getMessage());
         }
@@ -85,7 +86,8 @@ class ProductController extends Controller
     {
         try {
             $product = $this->productService->indexByCategory($id);
-            return ResponseHelper::SuccessResponse($product, 'Product Found', 200);
+            $result = ProductResource::collection($product);
+            return ResponseHelper::SuccessResponse($result, 'Product Found', 200);
         } catch (\Exception $e) {
             return ResponseHelper::FailureResponse($e->getMessage());
         }

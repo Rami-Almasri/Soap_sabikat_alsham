@@ -22,7 +22,7 @@ class CategoryService
     {
         $category = Category::create($data);
         if (isset($data['image'])) {
-            $category->addMedia($category['image'])->toMediaCollection('category');
+            $category->addMedia($data['image'])->toMediaCollection('Categorie');
         }
         return $category;
     }
@@ -32,8 +32,8 @@ class CategoryService
         if ($category) {
             $category->update($data);
             if (isset($data['image'])) {
-                $category->clearMediaCollection('category');
-                $category->addMedia($data['image'])->toMediaCollection('category');
+                $category->clearMediaCollection('Categorie');
+                $category->addMedia($data['image'])->toMediaCollection('Categorie');
             }
         }
         return $category;
@@ -47,12 +47,16 @@ class CategoryService
     {
 
         $category->delete();
-        $category->clearMediaCollection('category');
+        $category->clearMediaCollection('Categorie');
         return $category;
     }
     public function categorywithproduct()
     {
-        $categories = Category::with('products')->get();
+        $categories = Category::with(['products' => function ($q) {
+            $q->withExists(['favorites as is_fav' => function ($f) {
+                $f->where('user_id', auth()->id());
+            }]);
+        }])->get();
         return $categories;
     }
 }

@@ -102,7 +102,8 @@ class CategoryController extends Controller
     {
         try {
             $category = $this->categoryService->categorywithproduct();
-            return ResponseHelper::SuccessResponse($category, 'Category Found', 200);
+            $result = CategoryResource::collection($category);
+            return ResponseHelper::SuccessResponse($result, 'Category Found', 200);
         } catch (\Exception $e) {
             return ResponseHelper::FailureResponse($e->getMessage());
         }

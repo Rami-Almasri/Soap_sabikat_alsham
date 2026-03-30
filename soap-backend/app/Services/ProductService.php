@@ -38,7 +38,7 @@ class ProductService
     }
     public function show(Product $product)
     {
-        return $product;
+        return $product->load('category');
     }
     public function destroy(Product $category)
     {
