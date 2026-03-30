@@ -74,9 +74,9 @@ Full Stack Developer (Laravel & React)
 
 📧 Email: ramialmasri101@gmail.com
 
-🔗 LinkedIn: rami-almasri
+🔗 LinkedIn:[ rami-almasri](https://www.linkedin.com/in/rami-almasri-0a7155377/)
 
-💻 GitHub: @Rami-Almasri
+💻 GitHub:[ @Rami-Almasri](https://github.com/Rami-Almasri)
 
 <div align="center">
 <p><i>Dedicated to building scalable systems and modern web experiences.</i></p>
