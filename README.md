@@ -79,5 +79,5 @@ Full Stack Developer (Laravel & React)
 💻 GitHub:[ @Rami-Almasri](https://github.com/Rami-Almasri)
 
 <div align="center">
-<p><i>Dedicated to building scalable systems and modern web experiences.</i></p>
+  <p><i>Dedicated to building scalable systems and modern web experiences.</i></p>
 </div>
